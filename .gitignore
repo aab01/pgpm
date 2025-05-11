@@ -12,8 +12,6 @@ __pycache__/
 runs/
 wandb/
 
-# Ignore Figures directory (if generated dynamically)
-Figures/
 
 # Ignore any temporary or backup files
 *.tmp

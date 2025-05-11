@@ -45,7 +45,6 @@ The model of individual temporal structures reflects non-overlapping waveforms o
  
 Those familiar with _signal generators_ will recognise the obvious parallels, where characteristic temporal shapes, such as these, are used as 'test signals' to measure the fidelity of a signal processing system.
  
- 
 ![In addition to semantic temporal segmentation, the signals are also given one of two classes, which apply to each whole signal, but where the class differences are localised. The classes are distinguished by having two different frequency distributions associated with the cosine waveform; these 2 classes are not fully separable, but are well-separable. The classes also have different amplitude distributions for the square wave, allowing the development of techniques to probe saliency measures, and also approaches to training classifiers which are specific to, or ignorant of, amplitude distributions.](./Figures/CosFreqDist.svg)
  
 ## Noise Model
