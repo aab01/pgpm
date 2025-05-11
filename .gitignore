@@ -1,0 +1,21 @@
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Python cache files and directories
+*.pyc
+__pycache__/
+
+# Ignore system files
+.DS_Store
+
+# Ignore generated directories and files
+runs/
+wandb/
+
+# Ignore Figures directory (if generated dynamically)
+Figures/
+
+# Ignore any temporary or backup files
+*.tmp
+*.bak
+*.swp
