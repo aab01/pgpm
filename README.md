@@ -1,6 +1,6 @@
 ## PGPM - Synthetic Signal Generation
 
-``Version 3.5```
+**Version 3.5**
 
 This repository contains _Python_ code that can be used to draw signals from the piecewise Gaussian process model described in DSP2025 paper _A Piecewise Gaussian Process Model for Evaluating Training and Performance of Time-Series Pipelines_. The code here is slightly more general than that used to present the paper, but parameter settings can be adjusted to reproduce the same results (to within finding the seed for the PRNG).
 
@@ -20,8 +20,7 @@ The material focusses on interpreting and conveying the nature of this simple mo
 The _Jupyter_ notebook here entitled ```Demo``` reproduces many of the graphs used in the paper (again, seeds are not recorded or set for the PRNG, but you'll get similar results).
 
 ## Installation
-This is a relatively undemanding installation. The model itself makes use of ``PyTorch`` because the generator can be used in a manner similar to a dataloader, where files would be loaded from disk. However, signals are 
-easily generated on the fly.
+This is a relatively undemanding installation. The model itself makes use of ``PyTorch`` because the generator can be used in a manner similar to a dataloader, where files would be loaded from disk. However, signals are easily generated on the fly.
 
 ## Statistical Model
 The model is simply described as somewhat similar in spirit to a Gaussian process. For a discrete-time signal, indexed by time-linked variable, $k$,
