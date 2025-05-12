@@ -49,8 +49,17 @@ Those familiar with _signal generators_ will recognise the obvious parallels, wh
 ## Noise Model
 So far, the noise model given by the fact that this is a normal Gaussian distribution around a sequential sampling process to select and set parameters of the model. The noise model is easily converted into one with a non-trivial covariance structure, by running white-noise into a linear or band-pass filter and adding the resultant to the signal.
  
- ## Pseudo-Code for Signal Generation
+## Pseudo-Code for Signal Generation
 The signal generation process can be summarised in pseudo-code, which is presented in the DSP 2025 Conference paper (Anil A Bharath, _A Piecewise Gaussian Process Model for Evaluating Training and Performance of Time-Series Pipelines_, 2025.)
- 
+
+## TO DO
+
+ 0. Include dense segmentation training
+
+ 1. Add in baseline drift modelling/trends
+    
+ 2. Turn shape waveforms into generalised functions
+
+ 3. Include multiplicative gain variations
  
 ---
