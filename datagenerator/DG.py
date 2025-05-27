@@ -197,13 +197,13 @@ def makesignal(params):
         
     return y, patterntype, signalclass 
 
-def generate_data(params):
+def generate_data(params, num_samples=1):
 
-    signals = np.zeros((params['num_samples'], params['NTimeSamples']))
-    masks = np.zeros((params['num_samples'], params['NTimeSamples'], 6))
-    signalclass = np.zeros(params['num_samples'])
+    signals = np.zeros((num_samples, params['NTimeSamples']))
+    masks = np.zeros((num_samples, params['NTimeSamples'], 6))
+    signalclass = np.zeros(num_samples, dtype=int)
     
-    for c in range(params['num_samples']):
+    for c in range(num_samples):
         # Generate a signal with the specified parameters
         # and store it in the signals array. The signal generation p
         # arameters are passed as a dictionary to the makesignal function
