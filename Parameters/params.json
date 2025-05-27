@@ -5,7 +5,6 @@
     "NTimeSamples": 256,
     "startoffset": 20,
     "randomoffset": true,
-    "num_samples": 16,
     "noise_level": 0.1,
     "num_segments": 5
 }
