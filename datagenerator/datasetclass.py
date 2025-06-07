@@ -31,8 +31,8 @@ class SynthSignalsDataset(T.utils.data.Dataset):
     >>> for batch in dataloader:
     ...     print(batch['signals'], batch['gt'], batch['sc'])
   """
-  def __init__(self, num_samples=None, device=None, noise_level=0.0):
-    x_tmp, y_tmp, signalclass = generate_data(num_samples, noise_level)
+  def __init__(self, params, num_samples=None, device=None):
+    x_tmp, y_tmp, signalclass = generate_data(params, num_samples)
     self.x_data = T.tensor(x_tmp,
       dtype=T.float32).to(device)
     self.y_data = T.tensor(y_tmp,
