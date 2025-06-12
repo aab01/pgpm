@@ -5,12 +5,12 @@
   "startoffset": 5,
   "mu_A": 1.0,
   "sigma_A": 0.2,
-  "num_segments": 4,
+  "num_segments": 5,
   "with_replacement": false,
   "hyperparams": {
     "StartOffsetDilator": 8.0,
     "StartOffsetLow": 1,
-    "LengthDilator": 4.0,
+    "LengthDilator": 5.0,
     "MaxMinSegRatio": 2.0,
     "FreqDeltaSigma": 0.25,
     "AmpDeltaSigma": 1.0

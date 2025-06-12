@@ -87,6 +87,7 @@ def makesignal(params):
     maxseglength = int(round((NTimeSamples - startoffset - 1)/params['hyperparams']['LengthDilator']))
     minseglength = int(round(maxseglength/params['hyperparams']['MaxMinSegRatio']))
     
+
     # Below, the 6 non-zero waveform shapes that might be found in each example
     def square(length, amp, signalclass): # Square wave
         # Note that the overall signal class manifests partly in the amplitude
@@ -172,6 +173,8 @@ def makesignal(params):
         seglength = np.round((maxseglength-minseglength)*np.random.rand())+minseglength
         seglength = seglength.astype(int)
 
+        print(seglength)
+        
         # Select one of the waveform shapes from the pool
         Choice = pick(Choices)
 
