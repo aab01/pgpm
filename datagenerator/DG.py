@@ -74,23 +74,24 @@ def makesignal(params):
     noise_level = params['noise_level']
 
 
-    # Random starting point in time for the first waveform/shape instance...
     if params['randomoffset']:
-        startoffset  = np.random.randint(low=1,high=round(NTimeSamples/8),dtype=int)
+        startoffset = np.random.randint(low=1,
+                                         high=round(NTimeSamples/params['hyperparams']['StartOffsetDilator']), 
+                                         dtype=int)
     else: # Simpler version - not recommended, but here for backward compatability
         startoffset = params['startoffset']
 
     # Heuristically found to be good option to prevent signals either overlapping
     # each other (which can be a physical impossibility in some contexts), and also
     # to ensure there is something that can be reasonably detected.
-    maxseglength = int(round((NTimeSamples - startoffset - 1)/5))
-    minseglength = int(round(maxseglength/2))
+    maxseglength = int(round((NTimeSamples - startoffset - 1)/params['hyperparams']['LengthDilator']))
+    minseglength = int(round(maxseglength/params['hyperparams']['MaxMinSegRatio']))
     
     # Below, the 6 non-zero waveform shapes that might be found in each example
     def square(length, amp, signalclass): # Square wave
         # Note that the overall signal class manifests partly in the amplitude
         # of the square wave, and partly in an additive offset of the square wave
-        delta = float(signalclass)-0.5
+        delta = params['hyperparams']['AmpDeltaSigma']*float(signalclass)-params['hyperparams']['AmpDeltaSigma']/2.0
         return (amp+delta)*np.ones(length)
     
     def sine(length, amp, signalclass): # Sine wave, partial
@@ -104,9 +105,9 @@ def makesignal(params):
 
     def cosine(length, amp, signalclass): # Cosine wave
         #Signal class adds an offset the frequency of the cosine wave
-        delta = 0.25*np.random.randn() + (float(signalclass)-0.5) 
+        delta = params['hyperparams']['FreqDeltaSigma']*np.random.randn() + (float(signalclass)-0.5) 
         return amp*np.cos(np.pi*(1+delta)*np.linspace(0,1,length)) 
-    
+        
     def udramp(length, amp, signalclass): # Up down ramp
         if (length % 2) == 1:
             length += 1

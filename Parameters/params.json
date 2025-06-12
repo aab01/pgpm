@@ -1,10 +1,18 @@
 {
-    "sigma_A": 1.0,
-    "with_replacement": false,
-    "mu_A": 2.0,
-    "NTimeSamples": 256,
-    "startoffset": 20,
-    "randomoffset": true,
-    "noise_level": 0.1,
-    "num_segments": 5
+  "NTimeSamples": 256,
+  "noise_level": 0.1,
+  "randomoffset": true,
+  "startoffset": 5,
+  "mu_A": 1.0,
+  "sigma_A": 0.2,
+  "num_segments": 4,
+  "with_replacement": false,
+  "hyperparams": {
+    "StartOffsetDilator": 8.0,
+    "StartOffsetLow": 1,
+    "LengthDilator": 4.0,
+    "MaxMinSegRatio": 2.0,
+    "FreqDeltaSigma": 0.25,
+    "AmpDeltaSigma": 1.0
+  }
 }

@@ -102,7 +102,7 @@ PGPM/
 ├── training/                 # Directory for training-related scripts and configurations
 │   └── train_utils.py        # Helper functions for training
 ├── README.md                 # Project documentation
-└── pgpm.yml           # Conda environment configuration file
+└── pgpm.yml                  # Conda environment configuration file
 
 
 ## Installation
