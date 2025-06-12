@@ -173,8 +173,7 @@ def makesignal(params):
         seglength = np.round((maxseglength-minseglength)*np.random.rand())+minseglength
         seglength = seglength.astype(int)
 
-        print(seglength)
-        
+
         # Select one of the waveform shapes from the pool
         Choice = pick(Choices)
 
