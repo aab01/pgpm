@@ -87,21 +87,21 @@ and your training runs should appear.
 
 PGPM/
 ├── Demo.ipynb                # Notebook that demonstrates the PGPM signal model characteristics
-├── Train.ipynb               # Training notebook for signal segmentation (one possible inference task)
-├── Figures/                  # Figure directory for generated figures
+├── Train.ipynb               # Training notebook for signal segmentation
+├── Dense_infer.ipynb         # Notebook for inference using trained models
+├── Figures/                  # Directory for storing generated figures
 ├── runs/                     # Directory for TensorBoard logs (local logging)
-├── savedmodels/              # Directory for saved models after training
-├── model/                    # Directory containing the model definition
-│   └── model.py              # Inference Model architecture and related code
-│   └── unet1parts.py         # Inference Model architecture and related code
-├── datagenerator/            # Directory containing data generator classes
-│   └── dataclass.py          # Dataloader class for signals
-│   └── DG.py                 # Main code for the signal generation
+├── savedmodels/              # Directory for storing trained model files
+├── model/                    # Directory containing model definitions
+│   └── model.py              # Main model architecture for training and inference
+│   └── unet1parts.py         # Supporting components for the UNet model
+├── datagenerator/            # Directory containing data generation and loading classes
+│   └── dataclass.py          # Dataloader class for signal data
+│   └── DG.py                 # Main code for signal generation
 ├── training/                 # Directory for training-related scripts and configurations
-│   └── train_utils.py        # Helper functions for training of inference models
+│   └── train_utils.py        # Helper functions for training models
 ├── README.md                 # Project documentation
-└── pgpm.yml                  # Conda environment configuration file
-
+└── pgpm.yml                  # Conda environment configuration file for dependencies
 
 ## Installation
 This is a relatively undemanding installation. The model itself makes use of ``PyTorch`` because the generator can be used in a manner similar to a dataloader, where files would be loaded from disk. However, signals are easily generated on the fly.
