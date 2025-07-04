@@ -196,6 +196,16 @@ def makesignal(params):
         # Update the "Waveform Shape Channel" accordingly for that segment
         patterntype[startloc:endloc,Choice-1] = 1
     
+    # Add baseline drift if "add_baseline_drift" is set to True
+    if params['hyperparams']['add_baseline_drift']:
+        # Generate a baseline drift
+        PolyOrder = params['hyperparams']['drift_poly_order']
+        coeffs = np.random.rand(PolyOrder)-0.5
+        p = np.polynomial.Polynomial(coeffs)
+        # Evaluate the polynomial at the time points
+        _, baseline_drift = p.linspace(len(y), [0,1])
+        y += baseline_drift
+
     y = y + noise_level*np.random.randn(1,len(y))
         
     return y, patterntype, signalclass 

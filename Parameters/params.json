@@ -13,6 +13,8 @@
     "LengthDilator": 5.0,
     "MaxMinSegRatio": 2.0,
     "FreqDeltaSigma": 0.25,
-    "AmpDeltaSigma": 1.0
+    "AmpDeltaSigma": 1.0,
+    "add_baseline_drift": true,
+    "drift_poly_order": 4    
   }
 }
